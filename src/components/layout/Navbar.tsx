@@ -29,7 +29,7 @@ const NavBar = () => {
   return (
     <FlexRow
       className={
-        "w-full h-auto py-2 flex justify-between items-center z-100 transition-colors duration-300 px-30"
+        "w-full h-auto py-2 flex justify-between items-center z-100 transition-colors duration-300 px-30 bg-white border-b-2"
       }
     >
       <FlexRow className="items-center h-auto gap-2">
@@ -49,7 +49,6 @@ const NavBar = () => {
         ))}
       </FlexRow>
 
-      {/* Right: Contact Us, Menu, Hamburger */}
       <FlexRow className="items-center gap-4 relative">
         <button className="text-primary font-medium hidden sm:inline cursor-pointer px-4 py-2 border-2 rounded-xs border-gray-200">
           Login

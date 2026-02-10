@@ -79,8 +79,8 @@ const companiesData: Company[] = [
   },
 ];
   return (
-    <section className="min-h-screen px-40 py-14">
-      <FlexRow className="justify-between pb-16">
+    <section className="min-h-auto px-40 py-14">
+      <FlexRow className="justify-between pb-10">
         <span className="text-4xl">Top Companies</span>
         <Button className="bg-white text-primary  hover:text-white hover:bg-primary border border-gray-200 rounded-xs p-4">
           View All

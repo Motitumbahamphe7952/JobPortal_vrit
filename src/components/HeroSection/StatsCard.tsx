@@ -14,7 +14,7 @@ export default function StatsCard({
   label,
 }: StatsCardProps) {
   return (
-    <div className="bg-white hover:bg-gray-50 rounded-sm p-4 shadow-sm border border-gray-100 w-72">
+    <div className="bg-white hover:bg-gray-50 rounded-sm p-4 shadow-sm border border-gray-100 flex-1">
       <div className="flex items-center gap-4">
         <div className={`bg-blue-50 hover:bg-blue-100 p-3 rounded-sm`}>
           <Icon className={`w-6 h-6 text-blue-500`} />

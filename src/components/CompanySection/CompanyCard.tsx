@@ -43,7 +43,7 @@ export function CompanyCard({
 }: CompanyCardProps) {
   return (
     <Card
-      className={`mx-auto w-full max-w-sm hover:bg-gray-50 hover:shadow-md ${className}`}
+      className={`mx-auto w-full hover:bg-gray-50 hover:shadow-md ${className}`}
     >
       <CardHeader>
         <div className="flex items-center gap-3 mb-2">

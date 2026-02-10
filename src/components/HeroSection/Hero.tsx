@@ -44,7 +44,7 @@ const Hero = () => {
 
   return (
     <section className="bg-gray-50 pb-24">
-      <Grid className="lg:grid-cols-auto_1fr grid-cols-1 gap-4 lg:gap-12 px-40 items-center justify-center min-h-[65vh]">
+      <Grid className="lg:grid-cols-auto_1fr grid-cols-1 gap-4 lg:gap-12 px-40 items-center justify-center min-h-auto pt-14">
         <FlexColumn className="w-full space-y-2 justify-center gap-4 ">
           <span className="text-6xl font-normal leading-15 tracking-[-0.9px] text-new-black-400">
             Align your passion with your profession.
@@ -81,7 +81,7 @@ const Hero = () => {
           <img src="Illustration.svg" alt="Hero image" />
         </FlexRow>
       </Grid>
-      <FlexRow className="items-center justify-between px-40">
+      <FlexRow className="items-center justify-between px-40 gap-4 pt-24">
         {statsData.map((stat, index) => (
           <StatsCard
             key={index}
