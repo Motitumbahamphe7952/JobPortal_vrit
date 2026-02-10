@@ -1,0 +1,132 @@
+import {
+  Briefcase,
+  ArrowRight,
+  Facebook,
+  Youtube,
+  Instagram,
+  Twitter,
+} from "lucide-react";
+import FlexRow from "../common/FlexRow";
+
+const Footer = () => {
+  const quickLinks = [
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Blog", href: "/blog" },
+  ];
+
+  const candidateLinks = [
+    { label: "Browse Jobs", href: "/jobs" },
+    { label: "Browse Employers", href: "/employers" },
+    { label: "Candidate Dashboard", href: "/candidate/dashboard" },
+    { label: "Saved Jobs", href: "/candidate/saved-jobs" },
+  ];
+
+  const employerLinks = [
+    { label: "Post a Job", href: "/employer/post-job" },
+    { label: "Browse Candidates", href: "/employer/candidates" },
+    { label: "Employers Dashboard", href: "/employer/dashboard" },
+    { label: "Applications", href: "/employer/applications" },
+  ];
+
+  const supportLinks = [
+    { label: "Faqs", href: "/faqs" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms & Conditions", href: "/terms" },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  ];
+
+  const footerSections = [
+    { title: "Quick Link", links: quickLinks },
+    { title: "Candidate", links: candidateLinks },
+    { title: "Employers", links: employerLinks },
+    { title: "Support", links: supportLinks },
+  ];
+
+    const FooterSection = ({ title, links }: { title: string; links: { label: string; href: string }[] }) => (
+    <div>
+      <h3 className="text-white font-semibold mb-4">{title}</h3>
+      <ul className="space-y-3">
+        {links.map((link) => (
+          <li key={link.label} className="group">
+            <a
+              href={link.href}
+              className="text-sm hover:text-white transition-colors flex items-center"
+            >
+              <ArrowRight className="w-0 h-3 opacity-0 group-hover:w-3 group-hover:opacity-100 transition-all group-hover:mr-2" />
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  return (
+    <footer className="bg-[#010d2f] text-gray-400">
+      {/* Main Footer Content */}
+      <div className="px-40 py-12">
+        <div className="grid grid-cols-5 gap-8">
+          {/* Brand Section */}
+          <div className="col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <Briefcase className="w-6 h-6 text-white" />
+              <span className="text-white text-xl font-semibold">
+                Careersathi
+              </span>
+            </div>
+            <p className="text-sm">
+              Call now:{" "}
+              <span className="text-white font-medium">+977-9807343512</span>
+            </p>
+            <p className="text-xs leading-relaxed">
+              PatanDhoka, Lalitpur, Nepal
+            </p>
+          </div>
+          {/* Dynamic Footer Sections */}
+          {footerSections.map((section) => (
+            <FooterSection
+              key={section.title}
+              title={section.title}
+              links={section.links}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-800">
+        <div className="px-40 py-6">
+          <FlexRow className="justify-between items-center">
+            <p className="text-sm">
+              © 2026 Careersathi - Job Portal. All rights Reserved
+            </p>
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+          </FlexRow>
+        </div>
+      </div>
+    </footer>
+  );
+};;
+
+export default Footer;
