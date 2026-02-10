@@ -1,3 +1,5 @@
+import { Briefcase, Building2, Facebook, Instagram, Twitter, Users, Youtube, type LucideIcon } from "lucide-react";
+
 interface Job {
   id: number;
   title: string;
@@ -8,6 +10,23 @@ interface Job {
     logo: string;
     location: string;
   };
+}
+
+interface StatItem {
+  icon: LucideIcon;
+  value: number;
+  label: string;
+}
+
+interface Company {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  logo?: string;
+  icon?: LucideIcon;
+  location?: string;
+  openPositions?: number;
 }
 
 export const jobsData: Job[] = [
@@ -143,4 +162,131 @@ export const jobsData: Job[] = [
       location: "Dhaka, Bangladesh",
     },
   },
+];
+
+export const statsData: StatItem[] = [
+  {
+    icon: Briefcase,
+    value: 175324,
+    label: "Live Job",
+  },
+  {
+    icon: Building2,
+    value: 97354,
+    label: "Companies",
+  },
+  {
+    icon: Users,
+    value: 3847154,
+    label: "Candidates",
+  },
+  {
+    icon: Briefcase,
+    value: 7532,
+    label: "New Jobs",
+  },
+];
+
+export const companiesData: Company[] = [
+  {
+    id: "1",
+    title: "Google Inc.",
+    description: "Technology Company",
+    content:
+      "Leading technology company focused on search, advertising, and cloud computing services.",
+    logo: "Employers Logo.svg",
+    location: "Mountain View, CA",
+    openPositions: 45,
+  },
+  {
+    id: "2",
+    title: "Microsoft",
+    description: "Software & Cloud Services",
+    content:
+      "Global technology company developing software, hardware, and cloud solutions.",
+    logo: "Microsoft_icon.svg",
+    location: "Redmond, WA",
+    openPositions: 32,
+  },
+  {
+    id: "3",
+    title: "Startup Tech Co.",
+    description: "AI & Machine Learning",
+    content:
+      "Innovative startup working on cutting-edge AI solutions for businesses.",
+    logo: "volar.svg",
+    location: "San Francisco, CA",
+    openPositions: 8,
+  },
+  {
+    id: "1",
+    title: "Google Inc.",
+    description: "Technology Company",
+    content:
+      "Leading technology company focused on search, advertising, and cloud computing services.",
+    logo: "Employers Logo.svg",
+    location: "Mountain View, CA",
+    openPositions: 45,
+  },
+  {
+    id: "2",
+    title: "Microsoft",
+    description: "Software & Cloud Services",
+    content:
+      "Global technology company developing software, hardware, and cloud solutions.",
+    logo: "Microsoft_icon.svg",
+    location: "Redmond, WA",
+    openPositions: 32,
+  },
+  {
+    id: "3",
+    title: "Startup Tech Co.",
+    description: "AI & Machine Learning",
+    content:
+      "Innovative startup working on cutting-edge AI solutions for businesses.",
+    logo: "volar.svg",
+    location: "San Francisco, CA",
+    openPositions: 8,
+  },
+];
+
+export const quickLinks = [
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
+];
+
+export const candidateLinks = [
+  { label: "Browse Jobs", href: "/jobs" },
+  { label: "Browse Employers", href: "/employers" },
+  { label: "Candidate Dashboard", href: "/candidate/dashboard" },
+  { label: "Saved Jobs", href: "/candidate/saved-jobs" },
+];
+
+export const employerLinks = [
+  { label: "Post a Job", href: "/employer/post-job" },
+  { label: "Browse Candidates", href: "/employer/candidates" },
+  { label: "Employers Dashboard", href: "/employer/dashboard" },
+  { label: "Applications", href: "/employer/applications" },
+];
+
+export const supportLinks = [
+  { label: "Faqs", href: "/faqs" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms & Conditions", href: "/terms" },
+];
+
+export const socialLinks = [
+  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+  { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+];
+
+export const footerSections = [
+  { title: "Quick Link", links: quickLinks },
+  { title: "Candidate", links: candidateLinks },
+  { title: "Employers", links: employerLinks },
+  { title: "Support", links: supportLinks },
 ];

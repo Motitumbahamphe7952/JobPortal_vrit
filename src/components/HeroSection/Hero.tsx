@@ -1,47 +1,13 @@
-import {
-  Briefcase,
-  Building2,
-  Search,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
+import { Search } from "lucide-react";
 import FlexColumn from "../common/FlexColumn";
 import FlexRow from "../common/FlexRow";
 import Grid from "../common/Grid";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import StatsCard from "./StatsCard";
+import { statsData } from "@/constants";
 
 const Hero = () => {
-  interface StatItem {
-    icon: LucideIcon;
-    value: number;
-    label: string;
-  }
-
-  const statsData: StatItem[] = [
-    {
-      icon: Briefcase,
-      value: 175324,
-      label: "Live Job",
-    },
-    {
-      icon: Building2,
-      value: 97354,
-      label: "Companies",
-    },
-    {
-      icon: Users,
-      value: 3847154,
-      label: "Candidates",
-    },
-    {
-      icon: Briefcase,
-      value: 7532,
-      label: "New Jobs",
-    },
-  ];
-
   return (
     <section className="bg-gray-50 pb-24">
       <Grid className="lg:grid-cols-auto_1fr grid-cols-1 gap-4 lg:gap-12 px-40 items-center justify-center min-h-auto pt-14">

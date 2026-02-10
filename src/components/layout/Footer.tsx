@@ -1,56 +1,9 @@
-import {
-  Briefcase,
-  ArrowRight,
-  Facebook,
-  Youtube,
-  Instagram,
-  Twitter,
-} from "lucide-react";
+import { ArrowRight, Briefcase } from "lucide-react";
 import FlexRow from "../common/FlexRow";
+import { footerSections, socialLinks } from "@/constants";
 
 const Footer = () => {
-  const quickLinks = [
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Blog", href: "/blog" },
-  ];
-
-  const candidateLinks = [
-    { label: "Browse Jobs", href: "/jobs" },
-    { label: "Browse Employers", href: "/employers" },
-    { label: "Candidate Dashboard", href: "/candidate/dashboard" },
-    { label: "Saved Jobs", href: "/candidate/saved-jobs" },
-  ];
-
-  const employerLinks = [
-    { label: "Post a Job", href: "/employer/post-job" },
-    { label: "Browse Candidates", href: "/employer/candidates" },
-    { label: "Employers Dashboard", href: "/employer/dashboard" },
-    { label: "Applications", href: "/employer/applications" },
-  ];
-
-  const supportLinks = [
-    { label: "Faqs", href: "/faqs" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms & Conditions", href: "/terms" },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-    { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  ];
-
-  const footerSections = [
-    { title: "Quick Link", links: quickLinks },
-    { title: "Candidate", links: candidateLinks },
-    { title: "Employers", links: employerLinks },
-    { title: "Support", links: supportLinks },
-  ];
-
-    const FooterSection = ({ title, links }: { title: string; links: { label: string; href: string }[] }) => (
+  const FooterSection = ({title,links,}: {title: string;links: { label: string; href: string }[];}) => (
     <div>
       <h3 className="text-white font-semibold mb-4">{title}</h3>
       <ul className="space-y-3">
@@ -127,6 +80,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};;
+};
 
 export default Footer;
