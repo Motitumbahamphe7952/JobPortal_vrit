@@ -22,7 +22,6 @@ interface CarouselContainerProps<T> {
   className?: string;
 }
 
-// Cleaner type definition using Record
 const BASIS_CLASSES: Record<string, Record<number, string>> = {
   mobile: {
     1: "basis-full",
@@ -54,7 +53,6 @@ export function CarouselContainer<T>({
   showNavigation = true,
   className = "",
 }: CarouselContainerProps<T>) {
-  // Clean and simple - no messy type casting!
   const getBasisClass = () => {
     return cn(
       BASIS_CLASSES.mobile[itemsPerView.mobile || 1] || "basis-full",

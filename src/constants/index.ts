@@ -29,6 +29,16 @@ interface Company {
   openPositions?: number;
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  avatar?: string;
+  rating: number;
+  content: string;
+}
+
 export const jobsData: Job[] = [
   {
     id: 1,
@@ -247,6 +257,49 @@ export const companiesData: Company[] = [
     logo: "volar.svg",
     location: "San Francisco, CA",
     openPositions: 8,
+  },
+];
+
+ export const testimonialsData: Testimonial[] = [
+  {
+    id: "1",
+    name: "Sarah Johnson",
+    role: "Senior Developer",
+    company: "Google Inc.",
+    avatar: "https://api.dicebear.com/7.x/big-ears/svg?seed=Sarah",
+    rating: 5,
+    content:
+      "Careersathi helped me find my dream job in just 2 weeks. The platform is intuitive and the job matches were incredibly relevant to my skills.",
+  },
+  {
+    id: "2",
+    name: "Michael Chen",
+    role: "Product Manager",
+    company: "Microsoft",
+    avatar: "https://api.dicebear.com/7.x/big-ears/svg?seed=Michael",
+    rating: 5,
+    content:
+      "As a recruiter, Careersathi has streamlined our hiring process. We've found amazing talent quickly and efficiently.",
+  },
+  {
+    id: "3",
+    name: "Emily Rodriguez",
+    role: "UX Designer",
+    company: "Adobe",
+    avatar: "https://api.dicebear.com/7.x/big-ears/svg?seed=Emily",
+    rating: 4,
+    content:
+      "The job recommendations are spot-on. I appreciated the detailed company profiles and the easy application process.",
+  },
+  {
+    id: "5",
+    name: "Jessica Williams",
+    role: "Marketing Director",
+    company: "Salesforce",
+    avatar: "https://api.dicebear.com/7.x/big-ears/svg?seed=Jessica",
+    rating: 5,
+    content:
+      "Careersathi made my job search stress-free. The platform's features like saved jobs and application tracking are game-changers.",
   },
 ];
 
