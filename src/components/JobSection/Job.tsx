@@ -7,7 +7,7 @@ import { jobsData } from "@/constants";
 
 const Job = () => {
   return (
-    <section className="min-h-screen px-40 py-14">
+    <section className="min-h-auto px-40 py-14">
       <FlexRow className="justify-between pb-10">
         <span className="text-4xl">Featured Job</span>
         <Button className="bg-white text-primary  hover:text-white hover:bg-primary border border-gray-200 rounded-xs p-4">
