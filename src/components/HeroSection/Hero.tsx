@@ -78,7 +78,7 @@ const Hero = () => {
         </FlexColumn>
 
         <FlexRow className="justify-end">
-          <img src="public/Illustration.svg" alt="" />
+          <img src="Illustration.svg" alt="Hero image" />
         </FlexRow>
       </Grid>
       <FlexRow className="items-center justify-between px-40">
