@@ -1,63 +1,83 @@
-import { Briefcase } from "lucide-react";
+import { useState } from "react";
+import { Briefcase, Menu, X } from "lucide-react"; // Added Menu and X icons
 import FlexRow from "../common/FlexRow";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const dropdown = [
-    {
-      path: "/",
-      label: "Home",
-      enabled: "true",
-    },
-    {
-      path: "/jobs",
-      label: "Jobs",
-      enabled: "true",
-    },
-    {
-      path: "/about",
-      label: "About Us",
-      enabled: "true",
-    },
-    {
-      path: "/contact",
-      label: "Contact Us",
-      enabled: "true",
-    },
+    { path: "/", label: "Home" },
+    { path: "/jobs", label: "Jobs" },
+    { path: "/about", label: "About Us" },
+    { path: "/contact", label: "Contact Us" },
   ];
 
   return (
-    <FlexRow
-      className={
-        "w-full h-auto py-2 flex justify-between items-center z-100 transition-colors duration-300 px-30 bg-white border-b-2"
-      }
-    >
-      <FlexRow className="items-center h-auto gap-2">
-        <Briefcase size={32} />
-        <span className="text-xl font-medium">CareerSathi</span>
-      </FlexRow>
+    <nav className="w-full bg-white border-b-2 sticky top-0 z-100">
+      {/* Main Container */}
+      <FlexRow className="w-full h-auto py-2 justify-between items-center px-2 md:px-14 lg:px-30 transition-colors duration-300">
+        {/* Logo Section */}
+        <FlexRow className="items-center h-auto gap-2">
+          <Briefcase size={32} className="text-primary" />
+          <span className="text-lg font-bold">CareerSathi</span>
+        </FlexRow>
 
-      <FlexRow className="gap-4 ml-12">
-        {dropdown.map((item) => (
-          <NavLink
-            key={item.label}
-            to={item.path}
-            className="px-4 py-4 text-lg"
+        {/* Desktop Navigation - Hidden on Mobile/Tablet */}
+        <div className="hidden lg:flex items-center gap-4 ml-12">
+          {dropdown.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.path}
+              className={({ isActive }) =>
+                `px-4 py-4 text-lg font-medium transition-colors ${isActive ? "text-primary" : "text-gray-600 hover:text-primary"}`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Actions & Mobile Toggle */}
+        <FlexRow className="items-center gap-0 sm:gap-4">
+          <button className="text-primary font-medium hidden sm:inline cursor-pointer px-4 py-2 border-2 rounded-xs border-gray-200 hover:bg-gray-50">
+            Login
+          </button>
+          <span className="bg-primary hover:opacity-90 text-white text-sm sm:text-base px-4 py-2 rounded-xs leading-tight whitespace-nowrap cursor-pointer transition-all">
+            Register
+          </span>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2 text-gray-600"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            {item.label}
-          </NavLink>
-        ))}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </FlexRow>
       </FlexRow>
 
-      <FlexRow className="items-center gap-4 relative">
-        <button className="text-primary font-medium hidden sm:inline cursor-pointer px-4 py-2 border-2 rounded-xs border-gray-200">
-          Login
-        </button>
-        <span className="bg-gradient-primary hover:bg-secondary text-white text-[10px] sm:text-[16px] md:text-[18px] md:font-medium px-4 py-2 rounded-xs leading-tight whitespace-nowrap cursor-pointer">
-          Register
-        </span>
-      </FlexRow>
-    </FlexRow>
+      {/* Mobile Sidebar/Dropdown */}
+      <div
+        className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-64 border-b" : "max-h-0"}`}
+      >
+        <div className="flex flex-col p-4 space-y-2 bg-gray-50">
+          {dropdown.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.path}
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-3 text-base font-medium text-gray-700 hover:bg-white hover:text-primary rounded-md"
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <button className="sm:hidden w-full text-left px-4 py-3 text-base font-medium text-primary">
+            Login
+          </button>
+        </div>
+      </div>
+    </nav>
   );
 };
 

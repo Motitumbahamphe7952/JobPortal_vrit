@@ -62,33 +62,43 @@ export function CarouselContainer<T>({
   };
 
   return (
-    <section className={cn("pt-5 pb-30 px-8", className)}>
+    <section
+      className={cn("pt-5 pb-12 md:pb-20 lg:pb-30 px-4 md:px-8", className)}
+    >
       {/* Header Section */}
       {(title || description) && (
-        <div className="text-center mb-12">
-          {title && <h2 className="text-4xl font-semibold mb-4">{title}</h2>}
+        <div className="text-center mb-8 md:mb-12">
+          {title && (
+            <h2 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-4 px-2">
+              {title}
+            </h2>
+          )}
           {description && (
-            <p className="text-gray-600 max-w-2xl mx-auto">{description}</p>
+            <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto px-4">
+              {description}
+            </p>
           )}
         </div>
       )}
 
       {/* Carousel */}
       <Carousel className="w-full max-w-6xl mx-auto">
-        <CarouselContent className="-ml-4">
+        <CarouselContent className="-ml-2 md:-ml-4">
           {items.map((item, index) => (
-            <CarouselItem key={index} className={cn("pl-4", getBasisClass())}>
+            <CarouselItem
+              key={index}
+              className={cn("pl-2 md:pl-4", getBasisClass())}
+            >
               {renderItem(item, index)}
             </CarouselItem>
           ))}
         </CarouselContent>
 
-        {/* Navigation Arrows */}
         {showNavigation && (
-          <>
-            <CarouselPrevious />
-            <CarouselNext />
-          </>
+          <div className="hidden sm:block">
+            <CarouselPrevious className="-left-4 lg:-left-12" />
+            <CarouselNext className="-right-4 lg:-right-12" />
+          </div>
         )}
       </Carousel>
     </section>

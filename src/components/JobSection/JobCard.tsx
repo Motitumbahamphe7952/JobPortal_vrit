@@ -47,14 +47,14 @@ export default function JobCard({
       <FlexRow className="flex items-start justify-between mb-4">
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-          <FlexRow className="flex items-center gap-3">
-            <span
-              className={`text-xs font-semibold px-2 py-1 rounded ${employmentTypeStyles[employmentType]}`}
+          <div className="flex items-center gap-3">
+            <div
+              className={`text-xs font-semibold px-2 py-1 rounded-xs ${employmentTypeStyles[employmentType]}`}
             >
               {employmentType}
-            </span>
-            <span className="text-sm text-gray-500">Salary: {salaryRange}</span>
-          </FlexRow>
+            </div>
+            <div className="text-xs md:text-sm text-gray-500">Salary: {salaryRange}</div>
+          </div>
         </div>
       </FlexRow>
 
