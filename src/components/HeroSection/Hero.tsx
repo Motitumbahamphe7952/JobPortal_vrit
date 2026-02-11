@@ -52,7 +52,7 @@ const Hero = () => {
           />
         </FlexRow>
       </Grid>
-      <FlexRow className="flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-20 lg:px-40 gap-4 pt-10 md:pt-16 lg:pt-24">
+      <FlexRow className="flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-20 lg:px-40 gap-4 pt-10 md:pt-12">
         {statsData.map((stat, index) => (
           <StatsCard
             key={index}
