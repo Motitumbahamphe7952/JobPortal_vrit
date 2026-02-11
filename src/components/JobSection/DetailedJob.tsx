@@ -9,6 +9,9 @@ import {
   Clock,
   Copy,
   Bookmark,
+  Linkedin,
+  Facebook,
+  Twitter,
 } from "lucide-react";
 import FlexRow from "../common/FlexRow";
 
@@ -64,216 +67,211 @@ const DetailedJob = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4">
+    <div className="min-h-screen bg-gray-50 py-6 md:py-10 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Header Card */}
-            <div className="bg-white rounded-sm shadow-sm p-8">
-              <FlexRow className="items-start justify-between mb-6">
-                <FlexRow className="items-start gap-4">
-                  <div className="w-16 h-16 bg-white rounded-sm items-center justify-center">
+            <div className="bg-white rounded-sm shadow-sm p-5 md:p-8">
+              <div className="flex flex-col sm:flex-row items-start justify-between gap-6 mb-8">
+                <div className="flex flex-row items-start gap-4">
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-white border border-gray-100 rounded-sm shrink-0">
                     <img
                       src={job.company.logo}
                       alt="company logo"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain p-1"
                     />
                   </div>
-                  <div>
-                    <h1 className="text-2xl font-bold mb-1">{job.title}</h1>
-                    <FlexRow className="items-center gap-2 text-sm text-gray-600">
+                  <div className="min-w-0">
+                    <h1 className="text-xl md:text-2xl font-bold mb-1 break-words">
+                      {job.title}
+                    </h1>
+                    <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
                       <span>at {job.company.name}</span>
-
-                      {job.company.isVerified && (
-                        <span className="inline-block px-2 py-1 bg-green-100 text-green-700 rounded-xs text-xs">
-                          {job.company.isVerified ? "VERIFIED" : ""}
-                        </span>
-                      )}
-                      {job.company.featured && (
-                        <span className="inline-block px-2 py-1 bg-pink-100 text-pink-700 rounded-xs text-xs">
-                          {job.company.featured ? "FEATURED" : ""}
-                        </span>
-                      )}
-                    </FlexRow>
+                      <div className="flex gap-2">
+                        {job.company.isVerified && (
+                          <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded-xs text-[10px] font-bold">
+                            VERIFIED
+                          </span>
+                        )}
+                        {job.company.featured && (
+                          <span className="px-2 py-0.5 bg-pink-100 text-pink-700 rounded-xs text-[10px] font-bold">
+                            FEATURED
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </FlexRow>
-                <FlexRow className="gap-2">
+                </div>
+
+                <div className="flex w-full sm:w-auto gap-2">
                   <Button
                     variant="outline"
                     size="icon"
-                    className="rounded-sm"
+                    className="rounded-sm shrink-0 h-10 w-10 md:h-11 md:w-11"
                     onClick={() => {}}
                   >
-                    <Bookmark className="w-4 h-4" />
+                    <Bookmark className="w-5 h-5" />
                   </Button>
-                  <Button className="bg-primary hover:bg-secondary rounded-xs">
+                  <Button className="flex-1 sm:flex-none bg-primary hover:bg-secondary rounded-xs h-10 md:h-11 px-6 font-medium">
                     Apply Now
                   </Button>
-                </FlexRow>
-              </FlexRow>
-
-              {/* Job Description */}
-              <div className="mb-8">
-                <h2 className="text-lg font-semibold mb-3">Job Description</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  {job.description}
-                </p>
+                </div>
               </div>
 
-              {/* Requirements */}
-              <div className="mb-8">
-                <h2 className="text-lg font-semibold mb-3">Requirements</h2>
-                <ul className="space-y-2">
-                  {job?.requirements?.map((req, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span className="text-gray-600">{req}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <div className="space-y-8">
+                <section>
+                  <h2 className="text-lg font-semibold mb-3">
+                    Job Description
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                    {job.description}
+                  </p>
+                </section>
 
-              {/* Desirable */}
-              <div className="mb-8">
-                <h2 className="text-lg font-semibold mb-3">Desirable</h2>
-                <ul className="space-y-2">
-                  {job?.desirable?.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span className="text-gray-600">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <section>
+                  <h2 className="text-lg font-semibold mb-3">Requirements</h2>
+                  <ul className="space-y-2">
+                    {job?.requirements?.map((req, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-sm md:text-base"
+                      >
+                        <span className="text-primary mt-1 font-bold">•</span>
+                        <span className="text-gray-600">{req}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
 
-              {/* Benefits */}
-              <div>
-                <h2 className="text-lg font-semibold mb-3">Benefits</h2>
-                <ul className="space-y-2">
-                  {job?.benefits?.map((benefit, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span className="text-gray-600">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
+                {job.benefits && (
+                  <section>
+                    <h2 className="text-lg font-semibold mb-3">Benefits</h2>
+                    <ul className="space-y-2">
+                      {job?.benefits?.map((benefit, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start gap-2 text-sm md:text-base"
+                        >
+                          <span className="text-primary mt-1 font-bold">•</span>
+                          <span className="text-gray-600">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
               </div>
             </div>
           </div>
 
-          {/* Right Column - Job Overview & Share */}
           <div className="space-y-6">
-            {/* Salary Card */}
-            <div className="bg-white rounded-sm shadow-sm p-6">
-              <h3 className="text-sm text-gray-500 mb-1">Salary (USD)</h3>
+            <div className="bg-white rounded-sm shadow-sm p-6 border-l-4 border-green-500 md:border-l-0">
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                Salary (USD)
+              </h3>
               <div className="text-2xl font-bold text-green-600 mb-1">
                 {job.salaryRange}
               </div>
               <div className="text-xs text-gray-500">Monthly salary</div>
             </div>
 
-            {/* Job Location */}
-            <div className="bg-white rounded-sm shadow-sm p-6">
-              <div className="flex items-center gap-2 mb-2">
-                <MapPin className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Job Location</h3>
+            <div className="bg-white rounded-sm shadow-sm overflow-hidden">
+              <div className="p-6 border-b border-gray-50">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <h3 className="font-semibold">Job Location</h3>
+                </div>
+                <p className="text-gray-600 mt-2 text-sm">
+                  {job.company.location}
+                </p>
               </div>
-              <p className="text-gray-600">{job.company.location}</p>
+
+              <div className="bg-white rounded-sm shadow-sm p-6">
+                <h3 className="font-semibold mb-4">Job Overview</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Calendar className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <div className="text-sm text-gray-500">JOB POSTED</div>
+                      <div className="font-medium">{job.postedDate}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <div className="text-sm text-gray-500">JOB EXPIRE IN</div>
+                      <div className="font-medium">{job.expireDate}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Briefcase className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <div className="text-sm text-gray-500">JOB LEVEL</div>
+                      <div className="font-medium">{job.level}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <DollarSign className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <div className="text-sm text-gray-500">EXPERIENCE</div>
+                      <div className="font-medium">{job.experience}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Briefcase className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <div className="text-sm text-gray-500">EDUCATION</div>
+                      <div className="font-medium">{job.education}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Job Overview */}
             <div className="bg-white rounded-sm shadow-sm p-6">
-              <h3 className="font-semibold mb-4">Job Overview</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Calendar className="w-5 h-5 text-primary mt-0.5" />
-                  <div>
-                    <div className="text-sm text-gray-500">JOB POSTED</div>
-                    <div className="font-medium">{job.postedDate}</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-primary mt-0.5" />
-                  <div>
-                    <div className="text-sm text-gray-500">JOB EXPIRE IN</div>
-                    <div className="font-medium">{job.expireDate}</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Briefcase className="w-5 h-5 text-primary mt-0.5" />
-                  <div>
-                    <div className="text-sm text-gray-500">JOB LEVEL</div>
-                    <div className="font-medium">{job.level}</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <DollarSign className="w-5 h-5 text-primary mt-0.5" />
-                  <div>
-                    <div className="text-sm text-gray-500">EXPERIENCE</div>
-                    <div className="font-medium">{job.experience}</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Briefcase className="w-5 h-5 text-primary mt-0.5" />
-                  <div>
-                    <div className="text-sm text-gray-500">EDUCATION</div>
-                    <div className="font-medium">{job.education}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Share Job */}
-            <div className="bg-white rounded-sm shadow-sm p-6">
-              <h3 className="font-semibold mb-4">Share this job:</h3>
-              <FlexRow className="gap-2 mb-3">
+              <h3 className="font-semibold mb-4 text-sm">Share this job:</h3>
+              <div className="flex flex-col gap-3">
                 <Button
                   variant="outline"
                   size="sm"
-                  className="flex-1"
+                  className="w-full justify-center"
                   onClick={handleCopyLink}
                 >
-                  <Copy className="w-4 h-4 mr-1" />
+                  <Copy className="w-4 h-4 mr-2" />
                   Copy Link
                 </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleShare("linkedin")}
-                  className="bg-blue-700 text-white hover:bg-blue-800"
-                >
-                  in
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleShare("facebook")}
-                  className="bg-blue-600 text-white hover:bg-blue-700"
-                >
-                  f
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleShare("twitter")}
-                  className="bg-blue-400 text-white hover:bg-blue-500"
-                >
-                  𝕏
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleShare("email")}
-                  className="bg-gray-600 text-white hover:bg-gray-700"
-                >
-                  @
-                </Button>
-              </FlexRow>
+                <div className="flex gap-2 justify-between">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => handleShare("linkedin")}
+                    className="flex-1 bg-[#0077b5] text-white"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => handleShare("facebook")}
+                    className="flex-1 bg-[#1877f2] text-white"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => handleShare("twitter")}
+                    className="flex-1 bg-[#000000] text-white"
+                  >
+                    <Twitter className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

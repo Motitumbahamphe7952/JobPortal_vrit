@@ -16,7 +16,7 @@ const NavBar = () => {
   return (
     <nav className="w-full bg-white border-b-2 sticky top-0 z-100">
       {/* Main Container */}
-      <FlexRow className="w-full h-auto py-2 justify-between items-center px-2 md:px-14 lg:px-30 transition-colors duration-300">
+      <FlexRow className="w-full h-auto py-2 justify-between items-center px-4 md:px-14 lg:px-30 transition-colors duration-300">
         {/* Logo Section */}
         <FlexRow className="items-center h-auto gap-2">
           <Briefcase className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />

@@ -68,7 +68,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: false,
     },
@@ -120,7 +120,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: true,
     },
@@ -161,7 +161,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: false,
     },
@@ -201,7 +201,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: true,
     },
@@ -241,7 +241,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: false,
     },
@@ -281,7 +281,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: false,
       featured: false,
     },
@@ -320,7 +320,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: true,
     },
@@ -360,7 +360,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: true,
     },
@@ -400,7 +400,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: false,
     },
@@ -440,7 +440,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: true,
     },
@@ -480,7 +480,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: false,
       featured: false,
     },
@@ -519,7 +519,7 @@ export const jobsData: Job[] = [
     company: {
       name: "Google Inc.",
       logo: "/Employers Logo.svg",
-      location: "Dhaka, Bangladesh",
+      location: "Kathmandu, Nepal",
       isVerified: true,
       featured: true,
     },
