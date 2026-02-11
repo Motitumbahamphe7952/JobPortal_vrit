@@ -9,20 +9,20 @@ import { statsData } from "@/constants";
 
 const Hero = () => {
   return (
-    <section className="bg-gray-50 pb-24">
-      <Grid className="lg:grid-cols-auto_1fr grid-cols-1 gap-4 lg:gap-12 px-40 items-center justify-center min-h-auto pt-14">
-        <FlexColumn className="w-full space-y-2 justify-center gap-4 ">
-          <span className="text-6xl font-normal leading-15 tracking-[-0.9px] text-new-black-400">
+    <section className="bg-gray-50 pb-12 md:pb-16 lg:pb-24">
+      <Grid className="lg:grid-cols-auto_1fr grid-cols-1 gap-4 lg:gap-12 px-4 sm:px-8 md:px-20 lg:px-40 items-center justify-center min-h-auto pt-8 md:pt-12 lg:pt-14">
+        <FlexColumn className="w-full space-y-2 justify-center gap-4">
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight lg:leading-15 tracking-[-0.9px] text-new-black-400">
             Align your passion with your profession.
           </span>
 
-          <span className="text-lg font-light leading-7.5 text-new-black-300 w-lg">
+          <span className="text-base md:text-lg font-light leading-6 md:leading-7.5 text-new-black-300 w-full lg:w-lg">
             Aliquam vitae turpis in diam convallis finibus in at risus. Nullam
             in scelerisque leo, eget sollicitudin velit bestibulum.
           </span>
 
-          <FlexRow className="gap-2">
-            <div className="relative w-3/4">
+          <FlexRow className="gap-2 flex-col sm:flex-row w-full">
+            <div className="relative w-full sm:w-3/4">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <Input
                 className="rounded-xs h-12 pl-10 w-full peer"
@@ -37,17 +37,21 @@ const Hero = () => {
                 Job title, keywords, or company
               </label>
             </div>
-            <Button className="rounded-xs bg-gradient-primary h-12 text-lg font-light">
+            <Button className="rounded-xs bg-gradient-primary h-12 text-lg font-light w-full sm:w-auto">
               Find Job
             </Button>
           </FlexRow>
         </FlexColumn>
 
-        <FlexRow className="justify-end">
-          <img src="Illustration.svg" alt="Hero image" />
+        <FlexRow className="justify-center lg:justify-end mt-8 lg:mt-0">
+          <img
+            src="Illustration.svg"
+            alt="Hero image"
+            className="w-full max-w-sm md:max-w-md lg:max-w-none"
+          />
         </FlexRow>
       </Grid>
-      <FlexRow className="items-center justify-between px-40 gap-4 pt-24">
+      <FlexRow className="flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-20 lg:px-40 gap-4 pt-10 md:pt-16 lg:pt-24">
         {statsData.map((stat, index) => (
           <StatsCard
             key={index}

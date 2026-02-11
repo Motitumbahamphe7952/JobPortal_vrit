@@ -3,7 +3,13 @@ import FlexRow from "../common/FlexRow";
 import { footerSections, socialLinks } from "@/constants";
 
 const Footer = () => {
-  const FooterSection = ({title,links,}: {title: string;links: { label: string; href: string }[];}) => (
+  const FooterSection = ({
+    title,
+    links,
+  }: {
+    title: string;
+    links: { label: string; href: string }[];
+  }) => (
     <div>
       <h3 className="text-white font-semibold mb-4">{title}</h3>
       <ul className="space-y-3">
@@ -24,25 +30,25 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#010d2f] text-gray-400">
-      {/* Main Footer Content */}
-      <div className="px-40 py-12">
-        <div className="grid grid-cols-5 gap-8">
+      <div className="px-6 md:px-20 lg:px-40 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Section */}
-          <div className="col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+            <FlexRow className="items-center gap-2 mb-4">
               <Briefcase className="w-6 h-6 text-white" />
               <span className="text-white text-xl font-semibold">
                 Careersathi
               </span>
-            </div>
+            </FlexRow>
             <p className="text-sm">
               Call now:{" "}
               <span className="text-white font-medium">+977-9807343512</span>
             </p>
-            <p className="text-xs leading-relaxed">
+            <p className="text-xs leading-relaxed mt-1">
               PatanDhoka, Lalitpur, Nepal
             </p>
           </div>
+
           {/* Dynamic Footer Sections */}
           {footerSections.map((section) => (
             <FooterSection
@@ -56,12 +62,12 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
-        <div className="px-40 py-6">
-          <FlexRow className="justify-between items-center">
+        <div className="px-6 md:px-20 lg:px-40 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <p className="text-sm">
               © 2026 Careersathi - Job Portal. All rights Reserved
             </p>
-            <div className="flex items-center gap-4">
+            <FlexRow className="items-center gap-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -74,8 +80,8 @@ const Footer = () => {
                   <social.icon className="w-5 h-5" />
                 </a>
               ))}
-            </div>
-          </FlexRow>
+            </FlexRow>
+          </div>
         </div>
       </div>
     </footer>

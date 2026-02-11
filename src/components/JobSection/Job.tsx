@@ -7,15 +7,16 @@ import { jobsData } from "@/constants";
 
 const Job = () => {
   return (
-    <section className="min-h-auto px-40 py-14">
-      <FlexRow className="justify-between pb-10">
-        <span className="text-4xl">Featured Job</span>
-        <Button className="bg-white text-primary  hover:text-white hover:bg-primary border border-gray-200 rounded-xs p-4">
+    <section className="min-h-auto px-6 md:px-20 lg:px-40 py-14">
+      <FlexRow className="flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-10">
+        <span className="text-2xl md:text-4xl font-medium">Featured Job</span>
+        <Button className="bg-white text-primary hover:text-white hover:bg-primary border border-gray-200 rounded-xs p-4">
           View All
           <ArrowRight />
         </Button>
       </FlexRow>
-      <Grid cols={3} gap={6}>
+
+      <Grid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3" gap={6}>
         {jobsData.map((job) => (
           <JobCard
             key={job.id}
@@ -24,7 +25,6 @@ const Job = () => {
             employmentType={job.employmentType}
             salaryRange={job.salaryRange}
             company={job.company}
-            // onBookmark={() => handleBookmark(job.id)}
           />
         ))}
       </Grid>
