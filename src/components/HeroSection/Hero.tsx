@@ -17,8 +17,9 @@ const Hero = () => {
           </span>
 
           <span className="text-base md:text-lg font-light leading-6 md:leading-7.5 text-new-black-300 w-full lg:w-lg">
-            Aliquam vitae turpis in diam convallis finibus in at risus. Nullam
-            in scelerisque leo, eget sollicitudin velit bestibulum.
+            Discover opportunities that match your skills and goals. Browse
+            verified jobs, connect with top companies, and take the next step in
+            your career with confidence.
           </span>
 
           <FlexRow className="gap-2 flex-col sm:flex-row w-full">
