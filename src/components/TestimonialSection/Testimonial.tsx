@@ -13,7 +13,6 @@ export function Testimonial() {
           <div className="p-1">
             <Card className="h-full">
               <CardContent className="flex flex-col p-6 h-full">
-                {/* Quote Icon */}
                 <div className="mb-4">
                   <Quote className="w-10 h-10 text-blue-500 opacity-50" />
                 </div>

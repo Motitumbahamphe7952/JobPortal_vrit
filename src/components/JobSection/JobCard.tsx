@@ -3,7 +3,7 @@ import FlexRow from "../common/FlexRow";
 import { useNavigate } from "react-router-dom";
 
 interface JobCardProps {
-  id: number;
+  id: string;
   title: string;
   employmentType: "INTERNSHIP" | "PART-TIME" | "FULL-TIME";
   salaryRange: string;

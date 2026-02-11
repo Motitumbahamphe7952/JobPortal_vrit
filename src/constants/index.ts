@@ -1,16 +1,13 @@
-import { Briefcase, Building2, Facebook, Instagram, Twitter, Users, Youtube, type LucideIcon } from "lucide-react";
-
-interface Job {
-  id: number;
-  title: string;
-  employmentType: "INTERNSHIP" | "PART-TIME" | "FULL-TIME";
-  salaryRange: string;
-  company: {
-    name: string;
-    logo: string;
-    location: string;
-  };
-}
+import {
+  Briefcase,
+  Building2,
+  Facebook,
+  Instagram,
+  Twitter,
+  Users,
+  Youtube,
+  type LucideIcon,
+} from "lucide-react";
 
 interface StatItem {
   icon: LucideIcon;
@@ -39,138 +36,520 @@ export interface Testimonial {
   content: string;
 }
 
+export interface Job {
+  id: string;
+  title: string;
+  employmentType: "INTERNSHIP" | "PART-TIME" | "FULL-TIME";
+  salaryRange: string;
+  company: {
+    name: string;
+    logo: string;
+    location: string;
+    isVerified?: boolean;
+    featured?: boolean;
+  };
+  description?: string;
+  requirements?: string[];
+  desirable?: string[];
+  benefits?: string[];
+  postedDate?: string;
+  expireDate?: string;
+  level?: string;
+  experience?: string;
+  education?: string;
+}
+
 export const jobsData: Job[] = [
   {
-    id: 1,
+    id: "1",
     title: "Junior Graphic Designer",
     employmentType: "INTERNSHIP",
     salaryRange: "$20,000 - $25,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: false,
     },
+    description:
+      "We are looking for a talented Junior Graphic Designer to join our creative team. You will be working on various design projects, creating visual concepts to communicate ideas that inspire, inform, and captivate consumers. You develop the overall layout and production design for applications such as advertisements, brochures, magazines, and reports.",
+    requirements: [
+      "Strong creative and analytical skills combined with the desire to tackle challenges.",
+      "Solid understanding of UX/UI design principles.",
+      "12 years of experience in back-end development working either with multiple smaller projects simultaneously or large-scale applications.",
+      "Experience with Agile/Scrum development process.",
+      "Working regularly with APIs and Web Services (REST, GraphQL, SOAP, etc).",
+      "Have experience/awareness in Agile application development, commercial or open source frameworks.",
+      "Familiarity with version control and project management systems (e.g., GitHub, Jira).",
+      "Attention to detail and a strong understanding of web technologies and architectures.",
+      "Bachelor's degree (or equivalent) in computer science, information technology, or engineering.",
+      "Strong English (written and spoken). Knowing other languages is a plus.",
+    ],
+    desirable: [
+      "Working knowledge of eCommerce platforms, ideally Shopify but also others e.g. Magento, WooCommerce, Visualsoft is a bonus.",
+      "Working knowledge of payment gateways.",
+      "API platform experience / Building restful APIs.",
+    ],
+    benefits: [
+      "Early finish on Fridays for our end of week catch up (4:30 finish, and drink of your choice from the fridge).",
+      "28 days holiday (including bank holidays) rising by 1 day per year ASOS service up to a maximum of 3 days.",
+      "Private medical and dental care.",
+      "Dedicated budget for trainings and courses.",
+      "Team-working as a part of an agile cross-functional team.",
+      "Workplace pension scheme.",
+      "Free Breakfast every Monday and free snacks in the office.",
+      "Access to Perks at Work discount portal.",
+      "Cycle to work scheme.",
+      "Brand new MacBook Pro.",
+      "A friendly, social working environment with a newly refurbished city centre office, new equipment and the opportunity to work on interesting, innovative, and highly technical projects.",
+      "Early clinic day Wednesday.",
+      "Joining an agency on the cusp of exponential growth and being able to play.",
+    ],
+    postedDate: "14 Jun, 2026",
+    expireDate: "14 Aug, 2026",
+    level: "Entry Level",
+    experience: "1-2 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 2,
+    id: "2",
     title: "Interaction Designer",
     employmentType: "PART-TIME",
     salaryRange: "$20,000 - $25,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: true,
     },
+    description:
+      "Join our team as an Interaction Designer where you'll create engaging user experiences. You will work closely with product managers, engineers, and other designers to create innovative solutions that meet user needs and business goals.",
+    requirements: [
+      "3+ years of experience in interaction design or related field.",
+      "Strong portfolio demonstrating design thinking and problem-solving skills.",
+      "Proficiency in design tools such as Figma, Sketch, or Adobe XD.",
+      "Understanding of user-centered design principles and methodologies.",
+      "Experience conducting user research and usability testing.",
+      "Excellent communication and collaboration skills.",
+    ],
+    desirable: [
+      "Experience with prototyping tools and techniques.",
+      "Knowledge of front-end development (HTML, CSS, JavaScript).",
+      "Familiarity with accessibility standards and best practices.",
+    ],
+    benefits: [
+      "Flexible working hours and remote work options.",
+      "Professional development budget for conferences and training.",
+      "Health insurance coverage.",
+      "Stock options.",
+      "Collaborative and creative work environment.",
+      "Modern office space with amenities.",
+    ],
+    postedDate: "10 Jun, 2026",
+    expireDate: "10 Aug, 2026",
+    level: "Mid Level",
+    experience: "3-5 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 3,
+    id: "3",
     title: "Project Manager",
     employmentType: "FULL-TIME",
     salaryRange: "$20,000 - $25,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: false,
     },
+    description:
+      "We're seeking an experienced Project Manager to lead cross-functional teams in delivering high-impact projects. You'll be responsible for planning, executing, and closing projects while ensuring they meet quality standards and business objectives.",
+    requirements: [
+      "5+ years of project management experience.",
+      "PMP or similar certification preferred.",
+      "Strong leadership and team management skills.",
+      "Excellent organizational and time management abilities.",
+      "Experience with project management tools (Jira, Asana, MS Project).",
+      "Strong analytical and problem-solving skills.",
+    ],
+    desirable: [
+      "Agile/Scrum Master certification.",
+      "Experience in technology or software development projects.",
+      "Background in stakeholder management.",
+    ],
+    benefits: [
+      "Competitive salary and bonus structure.",
+      "Comprehensive health benefits.",
+      "Retirement savings plan with company match.",
+      "Professional development opportunities.",
+      "Work-life balance initiatives.",
+    ],
+    postedDate: "12 Jun, 2026",
+    expireDate: "12 Sep, 2026",
+    level: "Senior Level",
+    experience: "5-7 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 4,
+    id: "4",
     title: "Senior UI/UX Designer",
     employmentType: "FULL-TIME",
     salaryRange: "$30,000 - $35,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: true,
     },
+    description:
+      "Looking for a Senior UI/UX Designer who can lead design initiatives and mentor junior designers. You'll create beautiful, intuitive interfaces while maintaining design consistency across products.",
+    requirements: [
+      "6+ years of UI/UX design experience.",
+      "Strong portfolio showcasing end-to-end design projects.",
+      "Expert knowledge of design tools (Figma, Sketch, Adobe Creative Suite).",
+      "Experience with design systems and component libraries.",
+      "Leadership and mentorship abilities.",
+      "Understanding of responsive and mobile-first design.",
+    ],
+    desirable: [
+      "Experience with motion design and micro-interactions.",
+      "Knowledge of front-end technologies.",
+      "Background in user research methodologies.",
+    ],
+    benefits: [
+      "Competitive salary package.",
+      "Flexible working arrangements.",
+      "Learning and development budget.",
+      "Health and wellness programs.",
+      "Creative and collaborative team culture.",
+    ],
+    postedDate: "15 Jun, 2026",
+    expireDate: "15 Sep, 2026",
+    level: "Senior Level",
+    experience: "6-8 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 5,
+    id: "5",
     title: "Frontend Developer",
     employmentType: "PART-TIME",
     salaryRange: "$25,000 - $30,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: false,
     },
+    description:
+      "Join our development team as a Frontend Developer. You'll build responsive web applications using modern JavaScript frameworks and work closely with designers to implement pixel-perfect interfaces.",
+    requirements: [
+      "3+ years of frontend development experience.",
+      "Strong proficiency in HTML, CSS, and JavaScript.",
+      "Experience with React, Vue, or Angular.",
+      "Understanding of responsive design principles.",
+      "Knowledge of version control (Git).",
+      "Experience with REST APIs.",
+    ],
+    desirable: [
+      "TypeScript experience.",
+      "Knowledge of state management libraries.",
+      "Experience with testing frameworks.",
+    ],
+    benefits: [
+      "Flexible part-time schedule.",
+      "Remote work options.",
+      "Professional development support.",
+      "Modern tech stack.",
+      "Collaborative team environment.",
+    ],
+    postedDate: "18 Jun, 2026",
+    expireDate: "18 Aug, 2026",
+    level: "Mid Level",
+    experience: "3-5 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 6,
+    id: "6",
     title: "Content Writer",
     employmentType: "INTERNSHIP",
     salaryRange: "$15,000 - $20,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: false,
+      featured: false,
     },
+    description:
+      "We're looking for a creative Content Writer to produce engaging content for our digital platforms. You'll write blog posts, social media content, and marketing materials.",
+    requirements: [
+      "Excellent writing and editing skills.",
+      "Strong research abilities.",
+      "Understanding of SEO principles.",
+      "Ability to adapt tone and style for different audiences.",
+      "Time management and organizational skills.",
+    ],
+    desirable: [
+      "Experience with content management systems.",
+      "Basic understanding of digital marketing.",
+      "Portfolio of published work.",
+    ],
+    benefits: [
+      "Mentorship from experienced writers.",
+      "Flexible schedule.",
+      "Learning opportunities.",
+      "Portfolio building.",
+      "Potential for full-time conversion.",
+    ],
+    postedDate: "20 Jun, 2026",
+    expireDate: "20 Aug, 2026",
+    level: "Entry Level",
+    experience: "0-1 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 7,
+    id: "7",
     title: "Data Analyst",
     employmentType: "FULL-TIME",
     salaryRange: "$35,000 - $40,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: true,
     },
+    description:
+      "Seeking a Data Analyst to help drive business decisions through data insights. You'll work with large datasets, create visualizations, and provide actionable recommendations.",
+    requirements: [
+      "4+ years of data analysis experience.",
+      "Strong SQL skills.",
+      "Proficiency in data visualization tools (Tableau, Power BI).",
+      "Experience with Python or R.",
+      "Statistical analysis knowledge.",
+      "Excellent communication skills.",
+    ],
+    desirable: [
+      "Machine learning experience.",
+      "Experience with big data technologies.",
+      "Business intelligence background.",
+    ],
+    benefits: [
+      "Competitive compensation.",
+      "Health and dental insurance.",
+      "Professional development budget.",
+      "Latest analytics tools and technologies.",
+      "Data-driven company culture.",
+    ],
+    postedDate: "22 Jun, 2026",
+    expireDate: "22 Sep, 2026",
+    level: "Mid Level",
+    experience: "4-6 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 8,
+    id: "8",
     title: "Marketing Manager",
     employmentType: "FULL-TIME",
     salaryRange: "$40,000 - $45,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: true,
     },
+    description:
+      "Looking for an experienced Marketing Manager to lead our marketing initiatives. You'll develop strategies, manage campaigns, and drive brand awareness.",
+    requirements: [
+      "5+ years of marketing experience.",
+      "Proven track record in campaign management.",
+      "Strong digital marketing knowledge.",
+      "Team leadership experience.",
+      "Excellent analytical skills.",
+      "Budget management experience.",
+    ],
+    desirable: [
+      "MBA or marketing certification.",
+      "Experience with marketing automation tools.",
+      "B2B marketing background.",
+    ],
+    benefits: [
+      "Leadership role with growth potential.",
+      "Comprehensive benefits package.",
+      "Marketing budget authority.",
+      "Team building opportunities.",
+      "Performance bonuses.",
+    ],
+    postedDate: "25 Jun, 2026",
+    expireDate: "25 Sep, 2026",
+    level: "Senior Level",
+    experience: "5-7 Years",
+    education: "Master's Degree",
   },
   {
-    id: 9,
+    id: "9",
     title: "Product Designer",
     employmentType: "PART-TIME",
     salaryRange: "$28,000 - $32,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: false,
     },
+    description:
+      "Join as a Product Designer to shape user experiences across our product suite. You'll work on end-to-end design process from research to final implementation.",
+    requirements: [
+      "4+ years of product design experience.",
+      "Strong portfolio demonstrating product thinking.",
+      "Proficiency in design tools.",
+      "User research experience.",
+      "Understanding of product development lifecycle.",
+      "Collaboration with cross-functional teams.",
+    ],
+    desirable: [
+      "Experience in SaaS products.",
+      "Knowledge of design systems.",
+      "Background in startup environment.",
+    ],
+    benefits: [
+      "Flexible working hours.",
+      "Remote work options.",
+      "Design tool subscriptions.",
+      "Conference attendance support.",
+      "Creative freedom.",
+    ],
+    postedDate: "28 Jun, 2026",
+    expireDate: "28 Aug, 2026",
+    level: "Mid Level",
+    experience: "4-6 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 10,
+    id: "10",
     title: "Backend Developer",
     employmentType: "FULL-TIME",
     salaryRange: "$45,000 - $50,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: true,
     },
+    description:
+      "We're hiring a Backend Developer to build scalable server-side applications. You'll work with databases, APIs, and cloud infrastructure.",
+    requirements: [
+      "5+ years of backend development experience.",
+      "Strong knowledge of Node.js, Python, or Java.",
+      "Database design and optimization skills.",
+      "RESTful API development experience.",
+      "Understanding of microservices architecture.",
+      "Cloud platform experience (AWS, GCP, Azure).",
+    ],
+    desirable: [
+      "DevOps knowledge.",
+      "Experience with containerization (Docker, Kubernetes).",
+      "Message queue systems experience.",
+    ],
+    benefits: [
+      "Competitive salary and equity.",
+      "Latest development tools.",
+      "Learning and certification support.",
+      "Health insurance.",
+      "Work-life balance.",
+    ],
+    postedDate: "01 Jul, 2026",
+    expireDate: "01 Oct, 2026",
+    level: "Senior Level",
+    experience: "5-7 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 11,
+    id: "11",
     title: "SEO Specialist",
     employmentType: "INTERNSHIP",
     salaryRange: "$18,000 - $22,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: false,
+      featured: false,
     },
+    description:
+      "Looking for an SEO Specialist intern to optimize our web presence. You'll conduct keyword research, implement SEO strategies, and track performance metrics.",
+    requirements: [
+      "Basic understanding of SEO principles.",
+      "Familiarity with Google Analytics and Search Console.",
+      "Content optimization skills.",
+      "Analytical mindset.",
+      "Good communication skills.",
+    ],
+    desirable: [
+      "Experience with SEO tools (SEMrush, Ahrefs).",
+      "Basic HTML/CSS knowledge.",
+      "Understanding of link building strategies.",
+    ],
+    benefits: [
+      "Hands-on SEO experience.",
+      "Mentorship program.",
+      "Flexible schedule.",
+      "Certificate upon completion.",
+      "Full-time opportunity potential.",
+    ],
+    postedDate: "05 Jul, 2026",
+    expireDate: "05 Sep, 2026",
+    level: "Entry Level",
+    experience: "0-1 Years",
+    education: "Bachelor's Degree",
   },
   {
-    id: 12,
+    id: "12",
     title: "DevOps Engineer",
     employmentType: "FULL-TIME",
     salaryRange: "$50,000 - $55,000",
     company: {
       name: "Google Inc.",
-      logo: "Employers Logo.svg",
+      logo: "/Employers Logo.svg",
       location: "Dhaka, Bangladesh",
+      isVerified: true,
+      featured: true,
     },
+    description:
+      "Join our team as a DevOps Engineer to streamline our development and deployment processes. You'll manage infrastructure, implement CI/CD pipelines, and ensure system reliability.",
+    requirements: [
+      "6+ years of DevOps experience.",
+      "Strong knowledge of cloud platforms (AWS, GCP, Azure).",
+      "Experience with containerization and orchestration.",
+      "CI/CD pipeline implementation.",
+      "Infrastructure as Code (Terraform, CloudFormation).",
+      "Monitoring and logging tools expertise.",
+    ],
+    desirable: [
+      "Kubernetes certification.",
+      "Security best practices knowledge.",
+      "Experience with multiple cloud providers.",
+    ],
+    benefits: [
+      "Top-tier compensation package.",
+      "Latest DevOps tools and technologies.",
+      "Certification support.",
+      "On-call compensation.",
+      "Professional growth opportunities.",
+    ],
+    postedDate: "08 Jul, 2026",
+    expireDate: "08 Oct, 2026",
+    level: "Senior Level",
+    experience: "6-8 Years",
+    education: "Bachelor's Degree",
   },
 ];
 
@@ -204,7 +583,7 @@ export const companiesData: Company[] = [
     description: "Technology Company",
     content:
       "Leading technology company focused on search, advertising, and cloud computing services.",
-    logo: "Employers Logo.svg",
+    logo: "/Employers Logo.svg",
     location: "Mountain View, CA",
     openPositions: 45,
   },
@@ -229,17 +608,17 @@ export const companiesData: Company[] = [
     openPositions: 8,
   },
   {
-    id: "1",
+    id: "4",
     title: "Google Inc.",
     description: "Technology Company",
     content:
       "Leading technology company focused on search, advertising, and cloud computing services.",
-    logo: "Employers Logo.svg",
+    logo: "/Employers Logo.svg",
     location: "Mountain View, CA",
     openPositions: 45,
   },
   {
-    id: "2",
+    id: "5",
     title: "Microsoft",
     description: "Software & Cloud Services",
     content:
@@ -249,7 +628,7 @@ export const companiesData: Company[] = [
     openPositions: 32,
   },
   {
-    id: "3",
+    id: "6",
     title: "Startup Tech Co.",
     description: "AI & Machine Learning",
     content:
@@ -260,7 +639,7 @@ export const companiesData: Company[] = [
   },
 ];
 
- export const testimonialsData: Testimonial[] = [
+export const testimonialsData: Testimonial[] = [
   {
     id: "1",
     name: "Sarah Johnson",

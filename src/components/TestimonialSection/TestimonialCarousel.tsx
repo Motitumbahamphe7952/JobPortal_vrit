@@ -62,7 +62,7 @@ export function CarouselContainer<T>({
   };
 
   return (
-    <section className={cn("pb-30 px-8", className)}>
+    <section className={cn("pt-5 pb-30 px-8", className)}>
       {/* Header Section */}
       {(title || description) && (
         <div className="text-center mb-12">

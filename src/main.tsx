@@ -9,7 +9,7 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 import Layout from "./components/layout/Layout";
-import Home from "./components/pages/Home";
+import Home from "./pages/Home";
 import DetailedJob from "./components/JobSection/DetailedJob";
 import ComingSoon from "./components/ComingSoonSection/ComingSoon";
 
