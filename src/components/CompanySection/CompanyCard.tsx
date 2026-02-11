@@ -44,7 +44,7 @@ export function CompanyCard({
     <Card
       className={`mx-auto w-full hover:bg-gray-50 hover:shadow-md transition-all duration-200 ${className}`}
     >
-      <CardHeader className="p-4 md:p-6">
+      <CardHeader className="py-0">
         <div className="flex items-start sm:items-center gap-3 mb-2">
           {logo && (
             <img
@@ -82,7 +82,7 @@ export function CompanyCard({
         )}
       </CardContent>
 
-      <CardFooter className="p-4 md:p-6">
+      <CardFooter>
         <Button
           variant={buttonVariant}
           size="sm"

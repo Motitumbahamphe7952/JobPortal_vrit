@@ -84,7 +84,7 @@ const DetailedJob = () => {
                     />
                   </div>
                   <div className="min-w-0">
-                    <h1 className="text-xl md:text-2xl font-bold mb-1 break-words">
+                    <h1 className="text-xl md:text-2xl font-bold mb-1 wrap-break-word">
                       {job.title}
                     </h1>
                     <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
