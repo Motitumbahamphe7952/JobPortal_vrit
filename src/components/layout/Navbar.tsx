@@ -19,7 +19,7 @@ const NavBar = () => {
       <FlexRow className="w-full h-auto py-2 justify-between items-center px-2 md:px-14 lg:px-30 transition-colors duration-300">
         {/* Logo Section */}
         <FlexRow className="items-center h-auto gap-2">
-          <Briefcase size={32} className="text-primary" />
+          <Briefcase className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
           <span className="text-lg font-bold">CareerSathi</span>
         </FlexRow>
 

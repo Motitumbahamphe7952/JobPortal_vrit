@@ -52,7 +52,7 @@ const Hero = () => {
           />
         </FlexRow>
       </Grid>
-      <FlexRow className="flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-20 lg:px-40 gap-4 pt-10 md:pt-12">
+      <Grid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-between px-4 sm:px-8 md:px-20 lg:px-40 gap-4 pt-10 md:pt-12">
         {statsData.map((stat, index) => (
           <StatsCard
             key={index}
@@ -61,7 +61,7 @@ const Hero = () => {
             label={stat.label}
           />
         ))}
-      </FlexRow>
+      </Grid>
     </section>
   );
 };
