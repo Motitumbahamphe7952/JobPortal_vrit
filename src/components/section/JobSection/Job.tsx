@@ -1,6 +1,6 @@
-import FlexRow from "../common/FlexRow";
-import Grid from "../common/Grid";
-import { Button } from "../ui/button";
+import FlexRow from "../../common/FlexRow";
+import Grid from "../../common/Grid";
+import { Button } from "../../ui/button";
 import { ArrowRight } from "lucide-react";
 import JobCard from "./JobCard";
 import { jobsData } from "@/constants";

@@ -10,8 +10,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
-import DetailedJob from "./components/JobSection/DetailedJob";
-import ComingSoon from "./components/ComingSoonSection/ComingSoon";
+import DetailedJob from "./components/section/JobSection/DetailedJob";
+import ComingSoon from "./components/section/ComingSoonSection/ComingSoon";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

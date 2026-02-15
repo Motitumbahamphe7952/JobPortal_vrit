@@ -1,7 +1,8 @@
-import Company from "../components/CompanySection/Company";
-import Hero from "../components/HeroSection/Hero";
-import Job from "../components/JobSection/Job";
-import { Testimonial } from "../components/TestimonialSection/Testimonial";
+import Company from "@/components/section/CompanySection/Company";
+import Hero from "@/components/section/HeroSection/Hero";
+import Job from "@/components/section/JobSection/Job";
+import { Testimonial } from "@/components/section/TestimonialSection/Testimonial";
+
 
 const Home = () => {
   return (

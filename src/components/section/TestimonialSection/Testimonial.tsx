@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote, Star } from "lucide-react";
 import { CarouselContainer } from "./TestimonialCarousel";
-import { FlexRow } from "../common";
 import { testimonialsData, type Testimonial } from "@/constants";
+import { FlexRow } from "@/components/common";
 
 export function Testimonial() {
   return (

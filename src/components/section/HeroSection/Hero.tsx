@@ -1,11 +1,10 @@
 import { Search } from "lucide-react";
-import FlexColumn from "../common/FlexColumn";
-import FlexRow from "../common/FlexRow";
-import Grid from "../common/Grid";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+
 import StatsCard from "./StatsCard";
 import { statsData } from "@/constants";
+import { FlexColumn, FlexRow, Grid } from "@/components/common";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
@@ -38,7 +37,7 @@ const Hero = () => {
                 Job title, keywords, or company
               </label>
             </div>
-            <Button className="rounded-xs bg-gradient-primary h-12 text-lg font-light w-full sm:w-auto">
+            <Button className="rounded-xs geometric-primary h-12 text-lg font-light w-full sm:w-auto">
               Find Job
             </Button>
           </FlexRow>

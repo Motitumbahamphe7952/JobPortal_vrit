@@ -43,7 +43,7 @@ const NavBar = () => {
           <button className="text-primary font-medium hidden sm:inline cursor-pointer px-4 py-2 border-2 rounded-xs border-gray-200 hover:bg-gray-50">
             Login
           </button>
-          <span className="bg-primary hover:opacity-90 text-white text-sm sm:text-base px-4 py-2 rounded-xs leading-tight whitespace-nowrap cursor-pointer transition-all">
+          <span className="bg-primary hover:bg-primary-dark text-white text-sm sm:text-base px-4 py-2 rounded-xs leading-tight whitespace-nowrap cursor-pointer transition-all">
             Register
           </span>
 

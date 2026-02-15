@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { jobsData } from "@/constants";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import {
   Briefcase,
   MapPin,
@@ -13,7 +13,7 @@ import {
   Facebook,
   Twitter,
 } from "lucide-react";
-import FlexRow from "../common/FlexRow";
+import FlexRow from "../../common/FlexRow";
 
 const DetailedJob = () => {
   const { id } = useParams();

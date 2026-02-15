@@ -1,9 +1,9 @@
-import FlexRow from "../common/FlexRow";
-import Grid from "../common/Grid";
-import { Button } from "../ui/button";
+
 import { ArrowRight } from "lucide-react";
 import { CompanyCard } from "./CompanyCard";
 import { companiesData } from "@/constants";
+import { FlexRow, Grid } from "@/components/common";
+import { Button } from "@/components/ui/button";
 
 const Company = () => {
   return (

@@ -115,7 +115,9 @@
 }
 
 @theme {
-  --color-primary: #4682b4;
+  --color-primary: #0A65CC;
+  --color-primary-dark: #084E9E;
+  --color-primary-darker: #063E7E;
   --color-secondary: #557895;
 }
 
@@ -124,8 +126,16 @@
 }
 
 .bg-gradient-primary {
-  background: linear-gradient(90deg, #4682b4, #557895);
+  background: linear-gradient(60deg, #0A65CC, #084E9E,#063E7E);
   transition: background 0.3s ease;
+}
+
+.geometric-primary {
+  background: 
+    linear-gradient(135deg, #0A65CC 0%, #0A65CC 60%, transparent 33.33%),
+    linear-gradient(135deg, transparent 33.33%, #084E9E 33.33%, #084E9E 66.66%, transparent 66.66%),
+    linear-gradient(135deg, transparent 66.66%, #063E7E 66.66%);
+  background-color: #e8d5c4;
 }
 
 @layer base {
@@ -136,3 +146,4 @@
     @apply bg-background text-foreground;
   }
 }
+

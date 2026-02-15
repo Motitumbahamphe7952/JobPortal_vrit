@@ -1,6 +1,6 @@
+import { FlexColumn } from "@/components/common";
 import { type LucideIcon, Briefcase } from "lucide-react";
 import CountUp from "react-countup";
-import FlexColumn from "../common/FlexColumn";
 
 interface StatsCardProps {
   icon?: LucideIcon;
