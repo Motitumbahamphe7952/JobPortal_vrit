@@ -44,10 +44,18 @@ export default function JobCard({
       .catch((err) => console.error("Failed to load animation:", err));
   }, []);
 
-  // Play animation when bookmarked
+  // Play animation forward or backward based on bookmark state
   useEffect(() => {
-    if (bookmarked && lottieRef.current) {
-      lottieRef.current.goToAndPlay(0, true);
+    if (lottieRef.current) {
+      if (bookmarked) {
+        // Play forward (bookmark)
+        lottieRef.current.setDirection(1);
+        lottieRef.current.play();
+      } else {
+        // Play backward (unbookmark)
+        lottieRef.current.setDirection(-1);
+        lottieRef.current.play();
+      }
     }
   }, [bookmarked]);
 
@@ -102,7 +110,7 @@ export default function JobCard({
             e.stopPropagation();
             handleBookmark();
           }}
-          className="p-2 hover:bg-gray-50 rounded transition-colors"
+          className="p-2 hover:bg-gray-200 rounded-full transition-colors"
           aria-label={bookmarked ? "Remove bookmark" : "Add bookmark"}
         >
           {bookmarkAnimation ? (
@@ -114,7 +122,6 @@ export default function JobCard({
               style={{
                 width: 20,
                 height: 20,
-                filter: bookmarked ? "none" : "grayscale(100%) brightness(1.2)",
               }}
             />
           ) : (
