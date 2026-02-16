@@ -36,7 +36,6 @@ export default function JobCard({
 
   const navigate = useNavigate();
 
-  // Load animation from public folder
   useEffect(() => {
     fetch("/bookmark.json")
       .then((res) => res.json())
@@ -44,7 +43,6 @@ export default function JobCard({
       .catch((err) => console.error("Failed to load animation:", err));
   }, []);
 
-  // Play animation forward or backward based on bookmark state
   useEffect(() => {
     if (lottieRef.current) {
       if (bookmarked) {
@@ -125,7 +123,6 @@ export default function JobCard({
               }}
             />
           ) : (
-            // Fallback while loading
             <div className="w-5 h-5 bg-gray-200 rounded animate-pulse" />
           )}
         </button>
