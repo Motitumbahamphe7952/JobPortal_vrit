@@ -37,7 +37,7 @@ const Hero = () => {
                 Job title, keywords, or company
               </label>
             </div>
-            <Button className="rounded-xs geometric-primary h-12 text-lg font-light w-full sm:w-auto">
+            <Button className="rounded-xs bg-primary h-12 text-lg font-light w-full sm:w-auto">
               Find Job
             </Button>
           </FlexRow>
