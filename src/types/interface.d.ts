@@ -27,6 +27,7 @@ export interface Testimonial {
   content: string;
 }
 
+
 export interface Job {
   id: string;
   title: string;
