@@ -1,8 +1,11 @@
 import { MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import FlexRow from "../../common/FlexRow";
-import Lottie, { type LottieRefCurrentProps } from "lottie-react";
+import { IoBookmark } from "react-icons/io5";
+import { IoBookmarkOutline } from "react-icons/io5";
+
+
 
 interface JobCardProps {
   id: string;
@@ -31,31 +34,8 @@ export default function JobCard({
   company,
 }: JobCardProps) {
   const [bookmarked, setBookmarked] = useState(false);
-  const [bookmarkAnimation, setBookmarkAnimation] = useState(null);
-  const lottieRef = useRef<LottieRefCurrentProps>(null);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetch("/bookmark.json")
-      .then((res) => res.json())
-      .then((data) => setBookmarkAnimation(data))
-      .catch((err) => console.error("Failed to load animation:", err));
-  }, []);
-
-  useEffect(() => {
-    if (lottieRef.current) {
-      if (bookmarked) {
-        // Play forward (bookmark)
-        lottieRef.current.setDirection(1);
-        lottieRef.current.play();
-      } else {
-        // Play backward (unbookmark)
-        lottieRef.current.setDirection(-1);
-        lottieRef.current.play();
-      }
-    }
-  }, [bookmarked]);
 
   const handleBookmark = () => {
     setBookmarked((prev) => !prev);
@@ -111,20 +91,16 @@ export default function JobCard({
           className="p-2 hover:bg-gray-200 rounded-full transition-colors"
           aria-label={bookmarked ? "Remove bookmark" : "Add bookmark"}
         >
-          {bookmarkAnimation ? (
-            <Lottie
-              lottieRef={lottieRef}
-              animationData={bookmarkAnimation}
-              loop={false}
-              autoplay={false}
-              style={{
-                width: 20,
-                height: 20,
-              }}
-            />
+          {bookmarked ? (
+            <div>
+              <IoBookmark size={20} color="#010D2F" />
+            </div>
           ) : (
-            <div className="w-5 h-5 bg-gray-200 rounded animate-pulse" />
+            <div>
+              <IoBookmarkOutline size={20} color="#010D2F" />
+            </div>
           )}
+          {/* <div className="w-5 h-5 bg-gray-200 rounded animate-pulse" /> */}
         </button>
       </div>
     </div>
