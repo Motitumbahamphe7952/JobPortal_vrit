@@ -49,7 +49,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Dynamic Footer Sections */}
           {footerSections.map((section) => (
             <FooterSection
               key={section.title}
